@@ -19,6 +19,10 @@ function adicionarAmigo() {
 }
 
 function sortearAmigo(){
+    let lista = document.getElementById("resultado");
+        while (lista.firstChild) {
+        lista.removeChild(lista.firstChild);
+        }
     if (listaDeAmigosSorteados.length>0){
         let sorteado = listaDeAmigosSorteados[Math.floor(Math.random() * listaDeAmigosSorteados.length)];
         let ul = document.getElementById("resultado");
@@ -40,4 +44,3 @@ function limparCampo(){
     limpar = document.querySelector('input');
     limpar.value = '';
 }
-
