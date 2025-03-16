@@ -18,6 +18,24 @@ function adicionarAmigo() {
     limparCampo();
 }
 
+function sortearAmigo(){
+    if (listaDeAmigosSorteados.length>0){
+        let sorteado = listaDeAmigosSorteados[Math.floor(Math.random() * listaDeAmigosSorteados.length)];
+        let ul = document.getElementById("resultado");
+        let li = document.createElement("li");
+        li.textContent = `Parabéns, o sorteado foi: ${sorteado}`;
+        ul.appendChild(li);
+        esconderLista();
+    }else{
+        alert("Lista de amigos vazia. Insira algo antes de clicar!");
+    }
+  
+}
+
+function esconderLista() {
+    document.getElementById("listaAmigos").style.display = "none";
+}
+
 function limparCampo(){
     limpar = document.querySelector('input');
     limpar.value = '';
